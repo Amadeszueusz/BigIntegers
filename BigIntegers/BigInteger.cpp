@@ -254,6 +254,7 @@ BigInteger abs(const BigInteger & rhs)
 	BigInteger out(rhs);
 	out.is_value_negative = false;
 	return out;
+
 }
 
 BigInteger operator!(BigInteger rhs)
