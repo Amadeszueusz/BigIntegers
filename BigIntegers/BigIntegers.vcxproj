@@ -132,10 +132,12 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BigComplexInteger.h" />
     <ClInclude Include="BigInteger.h" />
     <ClInclude Include="BigIntegersUtility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BigComplexInteger.cpp" />
     <ClCompile Include="BigInteger.cpp" />
     <ClCompile Include="BigIntegersUtility.cpp" />
   </ItemGroup>

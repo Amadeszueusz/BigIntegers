@@ -24,12 +24,18 @@
     <ClInclude Include="BigIntegersUtility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BigComplexInteger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BigInteger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BigIntegersUtility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BigComplexInteger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

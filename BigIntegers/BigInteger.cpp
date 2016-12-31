@@ -245,7 +245,10 @@ BigInteger operator/(BigInteger lhs, const BigInteger & rhs)
 BigInteger operator-(const BigInteger & rhs)
 {
 	BigInteger out(rhs);
-	out.is_value_negative = !out.is_value_negative;
+
+	if(rhs != 0)
+		out.is_value_negative = !out.is_value_negative;
+
 	return out;
 }
 
@@ -254,7 +257,6 @@ BigInteger abs(const BigInteger & rhs)
 	BigInteger out(rhs);
 	out.is_value_negative = false;
 	return out;
-
 }
 
 BigInteger operator!(BigInteger rhs)
@@ -299,7 +301,7 @@ BigInteger add(const BigInteger & lhs, const BigInteger & rhs)
 
 	} while (remainder != 0 || pos < maxSize);
 
-	if (rhs.is_value_negative)
+	if (rhs.is_value_negative && lhs.is_value_negative)
 		product.push_back('-');
 
 	std::reverse(product.begin(), product.end());
@@ -321,6 +323,10 @@ BigInteger substract(const BigInteger & lhs, const BigInteger & rhs)
 		BigInteger output(substract(rhs, lhs));
 		output.is_value_negative = true;
 		return output;
+	}
+	else if (lhs == rhs)
+	{
+		return BigInteger();
 	}
 
 	do
@@ -354,6 +360,9 @@ BigInteger substract(const BigInteger & lhs, const BigInteger & rhs)
 
 BigInteger multiply(const BigInteger & lhs, const BigInteger & rhs)
 {
+	if (lhs == 0 || rhs == 0)
+		return BigInteger();
+
 	std::vector<int> values;
 	const size_t maxSize = lhs.value_size + rhs.value_size;
 	values.resize(maxSize, 0);
@@ -397,6 +406,9 @@ BigInteger divide(BigInteger lhs, BigInteger rhs)
 {
 	if (rhs == 0)
 		throw std::invalid_argument("Division by 0");
+
+	if (lhs == 0)
+		return BigInteger();
 
 	const bool output_negative = (lhs.is_value_negative != rhs.is_value_negative);
 
