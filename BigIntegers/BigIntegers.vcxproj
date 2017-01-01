@@ -135,11 +135,17 @@
     <ClInclude Include="BigComplexInteger.h" />
     <ClInclude Include="BigInteger.h" />
     <ClInclude Include="BigIntegersUtility.h" />
+    <ClInclude Include="BigNumber.h" />
+    <ClInclude Include="BigNumbersList.h" />
+    <ClInclude Include="BigNumbersListElement.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BigComplexInteger.cpp" />
     <ClCompile Include="BigInteger.cpp" />
     <ClCompile Include="BigIntegersUtility.cpp" />
+    <ClCompile Include="BigNumber.cpp" />
+    <ClCompile Include="BigNumbersList.cpp" />
+    <ClCompile Include="BigNumbersListElement.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -51,6 +51,11 @@ BigComplexInteger::~BigComplexInteger()
 		delete _imag;
 }
 
+std::string BigComplexInteger::value() const
+{
+	return _real->value();
+}
+
 BigComplexInteger & BigComplexInteger::operator=(const BigComplexInteger & rhs)
 {
 	_real = rhs._real;

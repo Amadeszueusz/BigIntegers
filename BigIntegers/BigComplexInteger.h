@@ -1,7 +1,7 @@
 #pragma once
 #include "BigInteger.h"
 
-class BigComplexInteger
+class BigComplexInteger : public BigNumber
 {
 public:
 	BigComplexInteger();
@@ -13,6 +13,9 @@ public:
 	BigComplexInteger(BigComplexInteger&& other);
 
 	~BigComplexInteger();
+
+public:
+	std::string value() const override;
 
 public:
 	BigComplexInteger& operator=(const BigComplexInteger& rhs);
